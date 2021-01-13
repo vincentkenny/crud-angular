@@ -176,5 +176,15 @@ section{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
 }
 
+.detail-button{
+  background-color: #4d4d4d ;
+  margin: 10 auto;
+  border-radius: 10px;
+}
+
+#btn-del{
+  margin-top:10px;
+}
+
 .outside-container{
 }

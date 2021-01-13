@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
 
   public registerProduct(){
     let res = this.service.registerProduct(this.product);
-    res.subscribe((data)=> this.message = data);
+    res.subscribe((data)=> {this.message = data; this.ngOnInit();});
   }
 
 }

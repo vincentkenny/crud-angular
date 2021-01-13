@@ -1,0 +1,48 @@
+<div class="outside-container" *ngIf="fetchedUser">
+    <div class="inside-container">
+        <div>
+            <h1>{{message}}</h1>
+        </div>
+        <div class="form-style-6">
+            <h1>Modify User</h1>
+            <form>
+                <input type="text" [(ngModel)]="modifiedUser.name" name="field1" placeholder="User Name" />
+                <input type="text" [(ngModel)]="modifiedUser.email" name="field2" placeholder="Email Address" />
+                <input type="submit" value="Update" (click)="updateUser()" />
+
+                <input type="submit" id="btn-del" value="Delete" (click)="deleteUser()" />
+            </form>
+        </div>
+
+    </div>
+    <div class="inside-container">
+        <section>
+            <!--for demo wrap-->
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+    
+                    <thead> 
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email Address</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+              
+                    <tbody>
+                       <tr>
+                           <td>{{fetchedUser.id}}</td>
+                           <td>{{fetchedUser.name}}</td>
+                           <td>{{fetchedUser.email}}</td>
+                       </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</div>
