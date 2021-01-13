@@ -9,7 +9,7 @@ import { ProductsService } from '../services/products.service';
 })
 export class ProductsComponent implements OnInit {
 
-  product: Product = new Product("",0,0);
+  product: Product = new Product("",null,null);
   message : any;
 
   listProduct : any;
@@ -24,7 +24,6 @@ export class ProductsComponent implements OnInit {
   public registerProduct(){
     let res = this.service.registerProduct(this.product);
     res.subscribe((data)=> this.message = data);
-    console.log("pushed");
   }
 
 }

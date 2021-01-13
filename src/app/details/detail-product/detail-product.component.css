@@ -182,5 +182,9 @@ section{
   border-radius: 10px;
 }
 
+#btn-del{
+  margin-top:10px;
+}
+
 .outside-container{
 }
