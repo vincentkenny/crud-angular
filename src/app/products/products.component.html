@@ -1,26 +1,64 @@
 <div class="outside-container">
     <div class="inside-container">
+        <div>
+            <h1>{{message}}</h1>
+        </div>
         <div class="form-style-6">
-            <h1>Add Products</h1>
+            <h1>Add Product</h1>
             <form>
-                <input type="text" name="field1" placeholder="Your Name" />
-                <input type="email" name="field2" placeholder="Email Address" />
-                <textarea name="field3" placeholder="Type your Message"></textarea>
-                <input type="submit" value="Send" />
+                <input type="text" [(ngModel)]="product.name" name="field1" placeholder="Product Name" />
+                <input type="number" [(ngModel)]="product.quantity" name="field2" placeholder="Initial Quantity" />
+                <input type="number" [(ngModel)]="product.price" name="field3" placeholder="Retail Price" />
+                <input type="submit" value="Send" (click)="registerProduct()" />
             </form>
         </div>
-    
+
     </div>
     <div class="inside-container">
-        <div class="form-style-6">
-            <h1>Add Products</h1>
-            <form>
-                <input type="text" name="field1" placeholder="Your Name" />
-                <input type="email" name="field2" placeholder="Email Address" />
-                <textarea name="field3" placeholder="Type your Message"></textarea>
-                <input type="submit" value="Send" />
-            </form>
-        </div>
-    
+        <section>
+            <!--for demo wrap-->
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <colgroup>
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 30%;">
+                        <col span="1" style="width: 20%;">
+                        <col span="1" style="width: 20%;">
+                        <col span="1" style="width: 20%;">
+                     </colgroup>
+                    <thead> 
+                        <tr>
+                            <th>ID no.</th>
+                            <th>Product Name</th>
+                            <th>Current Quantity</th>
+                            <th>Retail Price</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <colgroup>
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 30%;">
+                        <col span="1" style="width: 20%;">
+                        <col span="1" style="width: 20%;">
+                        <col span="1" style="width: 20%;">
+                     </colgroup>
+                    <tbody>
+                            <tr *ngFor="let entry of listProduct">
+                                <td>{{entry.id}}</td>
+                                <td>{{entry.name}}</td>
+                                <td>{{entry.quantity}}</td>
+                                <td>{{entry.price}}</td>
+                                <a class="detail-button" [routerLink] = "['/products',entry.id]"><td>Details</td></a>
+                            </tr>   
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </div>
 </div>
