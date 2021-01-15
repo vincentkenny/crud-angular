@@ -1,1 +1,53 @@
-<p>detail-purchase works!</p>
+<div class="outside-container" *ngIf="fetchedPurchase">
+    <div class="inside-container">
+        <div>
+            <h1>{{message}}</h1>
+        </div>
+        <div class="form-style-6">
+            <h1>Modify Transaction</h1>
+            <form>
+                <input type="number" [(ngModel)]="modifiedPurchase.productId" name="field1" placeholder="Product ID" />
+                <input type="number" [(ngModel)]="modifiedPurchase.quantity" name="field2" placeholder="Purchased Quantity" />
+                <input type="number" [(ngModel)]="modifiedPurchase.userId" name="field3" placeholder="User ID" />
+                <input type="submit" value="Update" (click)="updatePurchase()" />
+
+                <input type="submit" id="btn-del" value="Delete" (click)="deletePurchase()" />
+            </form>
+        </div>
+
+    </div>
+    <div class="inside-container">
+        <section>
+            <!--for demo wrap-->
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+    
+                    <thead> 
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Product ID</th>
+                            <th>Product Quantity</th>
+                            <th>Total Price</th>
+                            <th>User ID</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+              
+                    <tbody>
+                       <tr>
+                           <td>{{fetchedPurchase.id}}</td>
+                           <td>{{fetchedPurchase.productId}}</td>
+                           <td>{{fetchedPurchase.quantity}}</td>
+                           <td>{{fetchedPurchase.totalPrice}}</td>
+                           <td>{{fetchedPurchase.userId}}</td>
+                       </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</div>
