@@ -3,8 +3,9 @@
         <div class="form-style-6">
             <h1>Add User</h1>
             <form>
-                <input type="text" [(ngModel)]="user.name" name="field1" placeholder="Your Name" />
+                <input type="text" [(ngModel)]="user.username" name="field1" placeholder="Your Name" />
                 <input type="email" [(ngModel)]="user.email" name="field2" placeholder="Email Address" />
+                <input type="password" [(ngModel)]="user.password" name="field3" placeholder="Password" />
                 <input type="submit" value="Send" (click)="registerUser()" />
             </form>
         </div>
@@ -30,7 +31,7 @@
                     <tbody>
                         <tr *ngFor="let entry of listUser">
                             <td>{{entry.id}}</td>
-                            <td>{{entry.name}}</td>
+                            <td>{{entry.username}}</td>
                             <td>{{entry.email}}</td>
                             <a class="detail-button" [routerLink] = "['/users',entry.id]"><td>Details</td></a>
                         </tr>

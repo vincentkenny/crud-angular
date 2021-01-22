@@ -35,7 +35,7 @@
                             <td>{{entry.id}}</td>
                             <td>{{entry.productId}}</td>
                             <td>{{entry.quantity}}</td>
-                            <td>{{entry.totalPrice}}</td>
+                            <td>{{entry.totalPrice.toFixed(2)}}</td>
                             <td>{{entry.userId}}</td>
                             <a class="detail-button" [routerLink] = "['/purchases',entry.id]"><td>Details</td></a>
                         </tr>

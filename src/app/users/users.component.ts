@@ -9,7 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersComponent implements OnInit {
 
-  user : User = new User("","");
+  user : User = new User("","","");
   message: any;
   listUser : any;
 
@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     let res = this.service.getAllUser();
-    res.subscribe((data)=> this.listUser = data);
+    res.subscribe((data)=> {this.listUser = data; console.log(typeof(data))});
   }
 
   public registerUser(){

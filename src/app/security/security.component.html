@@ -1,0 +1,8 @@
+<h1>
+    {{message}}
+</h1>
+<form>
+    <input type="text" [(ngModel)]="authRequest.username" name="field1" placeholder="Username" />
+    <input type="password" [(ngModel)]="authRequest.password" name="field2" placeholder="Password" />
+    <input type="submit" value="Send" (click)="getAccessToken()" />
+</form>

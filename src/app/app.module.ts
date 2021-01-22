@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,8 @@ import { PurchasesComponent } from './purchases/purchases.component';
 import { DetailProductComponent } from './details/detail-product/detail-product.component';
 import { DetailUserComponent } from './details/detail-user/detail-user.component';
 import { DetailPurchaseComponent } from './details/detail-purchase/detail-purchase.component';
+import { SecurityComponent } from './security/security.component';
+import { AuthInterceptor } from './services/auth.interceptor.service';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { DetailPurchaseComponent } from './details/detail-purchase/detail-purcha
     PurchasesComponent,
     DetailProductComponent,
     DetailUserComponent,
-    DetailPurchaseComponent
+    DetailPurchaseComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,13 @@ import { DetailPurchaseComponent } from './details/detail-purchase/detail-purcha
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

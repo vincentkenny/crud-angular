@@ -11,7 +11,7 @@ import { User } from 'src/app/objects/user';
 export class DetailUserComponent implements OnInit {
 
   fetchedUser : any;
-  modifiedUser : User = new User("","");
+  modifiedUser : User = new User("","","");
   message : any;
 
   constructor(private service:UsersService, private activatedRoute: ActivatedRoute,

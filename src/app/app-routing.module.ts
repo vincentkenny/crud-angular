@@ -6,8 +6,12 @@ import { PurchasesComponent } from './purchases/purchases.component';
 import { DetailProductComponent } from './details/detail-product/detail-product.component';
 import { DetailUserComponent } from './details/detail-user/detail-user.component';
 import { DetailPurchaseComponent } from './details/detail-purchase/detail-purchase.component';
+import { SecurityComponent } from './security/security.component';
 
 const routes: Routes = [
+
+  {path: '', component: SecurityComponent },
+
   {path: 'products', component: ProductsComponent},
   {path: 'products/:id', component: DetailProductComponent},
   {path: 'users', component: UsersComponent}, 
